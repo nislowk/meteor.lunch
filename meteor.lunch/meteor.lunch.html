@@ -1,0 +1,38 @@
+<head>
+    <title>Lunch</title>
+</head>
+<body>
+    {{#if currentUser}}
+       {{> dashboard}}
+    {{else}}
+        {{> register}}
+        {{> login}}
+    {{/if}}
+</body>
+
+<template name="register">
+<form>
+<h1> Sign Up </h1>
+    <input type="email" id="register-email">
+    <input type="password" id="register-password">
+    <input type="submit" value="Register">
+</form>
+</template>
+
+<template name="login">
+ <h1> Sign In </h1>
+<form>
+    <input type="email" id="login-email">
+    <input type="password" id="login-password">
+    <input type="submit" value="Login">
+</form>
+</template>
+
+<template name="dashboard">
+    <p>Welcome!</p>
+    <p><a href="#" class="logout">Logout</a></p>
+</template>
+
+<template name="home">
+ <!--Main page of App -->
+</template>
