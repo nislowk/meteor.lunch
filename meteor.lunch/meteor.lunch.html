@@ -1,33 +1,44 @@
 <head>
+    <link rel="SHORTCUT ICON" href="bower_components/favicon.ico"/>
     <title>Lunch</title>
 </head>
 <body>
     {{#if currentUser}}
        {{> dashboard}}
     {{else}}
+        {{> video}}
         {{> register}}
         {{> login}}
     {{/if}}
 </body>
 
+<!-- Auth View -->
 <template name="register">
 <form>
 <h1> Sign Up </h1>
     <input type="email" id="register-email">
     <input type="password" id="register-password">
-    <input type="submit" value="Register">
+    <input type="submit" value="Register" id="submit">
 </form>
 </template>
 
 <template name="login">
- <h1> Sign In </h1>
 <form>
+<h1> Sign In </h1>
     <input type="email" id="login-email">
     <input type="password" id="login-password">
-    <input type="submit" value="Login">
+    <input type="submit" value="Login" id="submit">
 </form>
 </template>
 
+<template name="video">
+<video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
+<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+</video>
+</template>
+
+<!-- Logged In User View -->
 <template name="dashboard">
     <p>Welcome!</p>
     <p><a href="#" class="logout">Logout</a></p>
