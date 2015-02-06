@@ -1,4 +1,6 @@
 if(Meteor.isClient){
+    
+// Registration Form
 Template.register.events({
 'submit form': function(event, template){
     event.preventDefault();
@@ -12,6 +14,7 @@ Template.register.events({
  });
 };
 
+// Login Form
 if(Meteor.isClient){
 Template.login.events({
 'submit form': function(event, template){
@@ -23,7 +26,7 @@ Template.login.events({
  });
 };
 
-
+// User Auth View Controller
 if(Meteor.isClient){
 Template.dashboard.events({
     'click .logout': function(event){
@@ -32,3 +35,4 @@ Template.dashboard.events({
     }
  });
 }
+
